@@ -1,22 +1,21 @@
-import { Tecnologia } from '@core';
-import { Injectable } from '@nestjs/common';
-import { PrismaProvider } from 'src/db/prisma.provider';
-
-
+/* eslint-disable prettier/prettier */
+import { Tecnologia } from "@core"
+import { Injectable } from "@nestjs/common"
+import { PrismaProvider } from "src/db/prisma.provider"
 
 @Injectable()
 export class TecnologiaProvider {
-    constructor(private readonly prisma: PrismaProvider) {}
+	constructor(private readonly prisma: PrismaProvider) {}
 
-    async obterTodas(): Promise<Tecnologia[]> {
-        return this.prisma.tecnologia.findMany()
-    }
+	async obterTodas(): Promise<Tecnologia[]> {
+		return this.prisma.tecnologia.findMany()
+	}
 
-    async obterDestaques(): Promise<Tecnologia[]> {
-        return this.prisma.tecnologia.findMany({
-            where: {
-                destaque: true
-            },
-        })
-    }
+	async obterDestaques(): Promise<Tecnologia[]> {
+		return this.prisma.tecnologia.findMany({
+			where: {
+				destaque: true,
+			},
+		})
+	}
 }

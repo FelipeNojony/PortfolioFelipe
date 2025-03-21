@@ -1,4 +1,5 @@
-import { TecnologiaProvider } from './tecnologia.provider';
+/* eslint-disable prettier/prettier */
+import { TecnologiaProvider } from "./tecnologia.provider"
 import { Tecnologia } from "@core"
 import { Controller, Get } from "@nestjs/common"
 
